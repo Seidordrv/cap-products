@@ -1,8 +1,6 @@
-namespace  com.training;
+namespace com.training;
 
-using {
-    cuid
-} from '@sap/cds/common';
+using {cuid, Country} from '@sap/cds/common';
 
 
 entity Course : cuid {
@@ -22,6 +20,16 @@ entity StudentCourse : cuid {
     Course  : Association to Course;
 }
 
+entity Orders {
+    key ClientEmail : String(65);
+        FirstName   : String(30);
+        LastName    : String(30);
+        CreatedOn   : Date;
+        Reviewed    : Boolean;
+        Approved    : Boolean;
+        Country     : Country;
+        Status      : String(1);
+}
 // type EmailAddress_01 : many {
 //     kind  : String;
 //     email : String;
@@ -80,6 +88,3 @@ entity StudentCourse : cuid {
 //         Name = : pName;
 
 // entity ProjParamProducts(pName : String) as projection on Products where Name = : pName;
-
-
-
