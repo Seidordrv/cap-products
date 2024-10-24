@@ -17,15 +17,14 @@
   },
   "devDependencies": {
     "@cap-js/cds-types": "^0.6",
-    "@cap-js/sqlite": "^1"
+    "@cap-js/sqlite": "^1",
+    "@sap/ux-specification": "UI5-1.129"
   },
   "scripts": {
-    "start": "cds watch"
+    "start": "cds watch",
+    "watch-product": "cds watch --open product/webapp/index.html?sap-ui-xx-viewCache=false"
   },
   "cds": {
-    "features": {
-      "graphql": true
-    },
     "requires": {
       "sapbackend": {
         "kind": "odata-v2",
@@ -37,5 +36,9 @@
         }
       }
     }
-  }
+  },
+  "sapux": [
+    "app/product"
+  ]
 }
+
